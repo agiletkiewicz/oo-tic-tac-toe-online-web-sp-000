@@ -92,5 +92,9 @@ class TicTacToe
   end
 
 
+def over?
+  full? || draw? || won?
+end
+
   
 end
