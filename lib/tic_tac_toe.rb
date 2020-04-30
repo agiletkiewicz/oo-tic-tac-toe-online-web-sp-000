@@ -80,6 +80,12 @@ class TicTacToe
       position_taken?(combination[0]) && (@board[combination[0]] == @board[combination[1]]) && (@board[combination[1]] == @board[combination[2]])
     end
   end
+  
+  def full?
+    @board.all? do |position|
+      position == "X" || position == "O"
+    end
+  end
 
   
 end
