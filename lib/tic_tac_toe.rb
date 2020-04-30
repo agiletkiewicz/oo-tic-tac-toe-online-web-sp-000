@@ -92,18 +92,31 @@ class TicTacToe
   end
 
 
-def over?
-  full? || draw? || won?
-end
-
-def winner
-  if won?
-    winning_array = won?
-    @board[winning_array[0]]
-  else 
-    return nil 
+  def over?
+    full? || draw? || won?
   end
-end
+
+  def winner
+    if won?
+      winning_array = won?
+      @board[winning_array[0]]
+    else 
+      return nil 
+    end
+  end
+
+  def play(board)
+    until over?(board)
+      turn(board)
+    end
+    if won?(board)
+      winner = winner(board)
+      puts "Congratulations #{winner}!"
+    else 
+      puts "Cat's Game!"
+    end
+  end
+
 
   
 end
