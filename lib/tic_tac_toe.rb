@@ -96,5 +96,14 @@ def over?
   full? || draw? || won?
 end
 
+def winner
+  if won?
+    winning_array = won?
+    @board[winning_array[0]]
+  else 
+    return nil 
+  end
+end
+
   
 end
